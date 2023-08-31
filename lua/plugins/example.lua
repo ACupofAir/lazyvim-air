@@ -28,30 +28,6 @@ return {
     end,
   },
 
-  -- change some telescope options and a keymap to browse plugin files
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      -- add a keymap to browse plugin files
-      -- stylua: ignore
-      {
-        "<leader>fp",
-        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
-        desc = "Find Plugin File",
-      },
-    },
-    -- change some options
-    opts = {
-      defaults = {
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
-        sorting_strategy = "ascending",
-        winblend = 0,
-      },
-    },
-  },
-
-
 
   -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
   -- would overwrite `ensure_installed` with the new value.
@@ -86,7 +62,7 @@ return {
         options = {
           icons_enabled = true,
           theme = 'auto',
-          component_separators = { left = '', right = ''},
+          component_separators = { left = '|', right = ''},
           section_separators = { left = '', right = ''},
           disabled_filetypes = {
             statusline = {},
@@ -103,7 +79,16 @@ return {
         },
         sections = {
           lualine_a = {'mode'},
-          lualine_b = { 'branch', 'diff' },
+          lualine_b = {
+            {'branch'},
+            {
+              "diff",
+              symbols = {
+                added = icons.git.added,
+                modified = icons.git.modified,
+                removed = icons.git.removed,
+              },
+            }, },
           lualine_c = {
             {
               "diagnostics",
@@ -116,8 +101,8 @@ return {
             },
           },
           lualine_x = {'encoding', 'fileformat', 'filetype'},
-          lualine_y = {'progress'},
-          lualine_z = {'location'}
+          lualine_y = {'location'},
+          lualine_z = {'progress'}
         },
         inactive_sections = {},
         tabline = {},
@@ -136,5 +121,4 @@ return {
       }
     end
   },
-
 }
