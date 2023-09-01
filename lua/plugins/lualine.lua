@@ -4,6 +4,14 @@ return {
     event = "VeryLazy",
     opts = function()
       local icons = require("lazyvim.config").icons
+      local function modified()
+        if vim.bo.modified then
+          return ""
+        elseif vim.bo.modifiable == false or vim.bo.readonly == true then
+          return ""
+        end
+        return ""
+      end
       return {
         options = {
           icons_enabled = true,
@@ -24,7 +32,13 @@ return {
           },
         },
         sections = {
-          lualine_a = { "mode" },
+          lualine_a = {
+            "mode",
+            {
+              modified,
+              color = { bg = "#ff966c", fg = "#ffffff" },
+            },
+          },
           lualine_b = {
             { "branch" },
             {
@@ -47,7 +61,11 @@ return {
               },
             },
           },
-          lualine_x = { "encoding", "fileformat", "filetype" },
+          lualine_x = {
+            "encoding",
+            "fileformat",
+            "filetype",
+          },
           lualine_y = { "location" },
           lualine_z = { "progress" },
         },

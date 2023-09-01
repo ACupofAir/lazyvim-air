@@ -1,10 +1,14 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
--- keymaps for vscode
+-- diable termianl <c-h>
+vim.keymap.del("t", "<C-h>")
+
 local map = vim.api.nvim_set_keymap
 map("n", "<leader>rn", "*``cgn", { desc = "Rename same words" })
 map("n", "<leader>rn", "#``cgN", { desc = "Rename same words" })
+
+-- keymaps for vscode
 if vim.g.vscode then
   map("n", "<leader>w", "<Cmd>call VSCodeCall('workbench.action.files.save')<CR>", { desc = "Save File" })
   map("n", "<leader>ee", "<Cmd>call VSCodeCall('workbench.view.explorer')<CR>", { desc = "Open Explorer" })

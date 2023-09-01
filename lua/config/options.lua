@@ -5,4 +5,4 @@ vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.undofile = false
 vim.opt.writebackup = false
-vim.b.autoformat = false
+vim.opt.shell = "powershell"

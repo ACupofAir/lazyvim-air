@@ -1,4 +1,11 @@
 return {
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      autoformat = false,
+    },
+  },
+
   -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
