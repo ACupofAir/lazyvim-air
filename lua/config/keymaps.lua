@@ -1,16 +1,32 @@
+----------------------------------------------------------------------------------------------------
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+----------------------------------------------------------------------------------------------------
+-----------------------------==========================================-----------------------------
+-----------------------------=    DISABLE DEFAULT CONFLICT KEYMAPS    =-----------------------------
+-----------------------------==========================================-----------------------------
+----------------------------------------------------------------------------------------------------
 -- diable termianl <c-h>
 vim.keymap.del("t", "<C-h>")
+-- make [<leader> w] to save file
+vim.keymap.del("n", "<leader>ww")
+vim.keymap.del("n", "<leader>wd")
+vim.keymap.del("n", "<leader>w|")
+vim.keymap.del("n", "<leader>w-")
 
+-- keymaps for cgn
 local map = vim.api.nvim_set_keymap
 map("n", "<leader>rn", "*``cgn", { desc = "Rename same words" })
 map("n", "<leader>rn", "#``cgN", { desc = "Rename same words" })
 
--- keymaps for vscode
+----------------------------------------------------------------------------------------------------
+-----------------------------==========================================-----------------------------
+-----------------------------=            VSCODE KEYMAPS              =-----------------------------
+-----------------------------==========================================-----------------------------
+----------------------------------------------------------------------------------------------------
 if vim.g.vscode then
   map("n", "<leader>w", "<Cmd>call VSCodeCall('workbench.action.files.save')<CR>", { desc = "Save File" })
+  map("n", "<leader>q", "<Cmd>call VSCodeCall('workbench.action.closeActiveEditor')<CR>", { desc = "Close Window" })
   map("n", "<leader>ee", "<Cmd>call VSCodeCall('workbench.view.explorer')<CR>", { desc = "Open Explorer" })
   map(
     "n",
@@ -30,7 +46,17 @@ if vim.g.vscode then
   map("n", "<S-h>", "<Cmd>call VSCodeCall('workbench.action.previousEditor')<CR>", { desc = "Go to Previous Editor" })
   map("n", "<S-l>", "<Cmd>call VSCodeCall('workbench.action.nextEditor')<CR>", { desc = "Go to Next Editor" })
 else
-  --config for neovim
-  map("n", "<leader>ww", "<Cmd>:w<CR>", { desc = "Save File" })
+  ----------------------------------------------------------------------------------------------------
+  -----------------------------==========================================-----------------------------
+  -----------------------------=            NEOVIM KEYMAPS              =-----------------------------
+  -----------------------------==========================================-----------------------------
+  ----------------------------------------------------------------------------------------------------
+  -- make [<leader> q] to quit windows
+  vim.keymap.del("n", "<leader>qq")
+  vim.keymap.del("n", "<leader>ql")
+  vim.keymap.del("n", "<leader>qd")
+  vim.keymap.del("n", "<leader>qs")
+  map("n", "<leader>q", "<Cmd>:q<CR>", { desc = "Quit Winodw" })
+  map("n", "<leader>w", "<Cmd>:w<CR>", { desc = "Save File" })
   map("n", "<leader>fd", "<cmd>cd %:p:h<cr>", { desc = "Go to the current file directory" })
 end
