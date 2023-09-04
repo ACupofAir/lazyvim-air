@@ -34,18 +34,43 @@ return {
   --treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "ninja",
-        "python",
-        "rst",
-        "toml",
+    opts = {
+      highlight = { enable = not vim.g.vscode },
+      indent = { enable = true },
+      ensure_installed = {
+        "bash",
+        "c",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
         "lua",
+        "luadoc",
+        "luap",
         "markdown",
         "markdown_inline",
+        "python",
+        "query",
+        "regex",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
         "yaml",
-      })
-    end,
+        "ninja",
+        "rst",
+        "toml"
+      },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-i>",
+          node_incremental = "<C-i>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
+    },
   },
 
   --null-ls
