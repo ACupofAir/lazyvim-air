@@ -36,7 +36,7 @@ if vim.g.vscode then
   )
   map("n", "<leader>cr", "<Cmd>call VSCodeCall('editor.action.rename')<CR>", { desc = "Rename Symbol Name" })
   map("n", "<leader>cf", "<Cmd>call VSCodeCall('editor.action.formatDocument')<CR>", { desc = "Format Document" })
-  map("n", "<leader>co", "<Cmd>call VSCodeCall('outline.focus')<CR>", { desc = "Show Code Outline" })
+  map("n", "<leader>cs", "<Cmd>call VSCodeCall('outline.focus')<CR>", { desc = "Show Code Outline" })
   map("n", "<leader>ss", "<Cmd>call VSCodeCall('workbench.action.gotoSymbol')<CR>", { desc = "Search Symbol" })
   map("n", "<leader>gp", "<Cmd>call VSCodeCall('editor.action.dirtydiff.next')<CR>", { desc = "Preview Git Hunk" })
   map("n", "[g", "<Cmd>call VSCodeCall('workbench.action.editor.previousChange')<CR>", { desc = "Previous Git Change" })
@@ -45,6 +45,8 @@ if vim.g.vscode then
   map("n", "]d", "<Cmd>call VSCodeCall('editor.action.marker.next')<CR>", { desc = "Next Warning, Error" })
   map("n", "<S-h>", "<Cmd>call VSCodeCall('workbench.action.previousEditor')<CR>", { desc = "Go to Previous Editor" })
   map("n", "<S-l>", "<Cmd>call VSCodeCall('workbench.action.nextEditor')<CR>", { desc = "Go to Next Editor" })
+  map("n", "zc", "<Cmd>call VSCodeCall('editor.fold')<CR>", { desc = "Fold" })
+  map("n", "zo", "<Cmd>call VSCodeCall('editor.unfold')<CR>", { desc = "Unfold" })
 else
   ----------------------------------------------------------------------------------------------------
   -----------------------------==========================================-----------------------------
