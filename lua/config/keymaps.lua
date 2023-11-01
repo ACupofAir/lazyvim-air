@@ -25,9 +25,21 @@ map("n", "<leader>rn", "#``cgN", { desc = "Rename same words" })
 -----------------------------==========================================-----------------------------
 ----------------------------------------------------------------------------------------------------
 if vim.g.vscode then
+  map(
+    "n",
+    "<leader>to",
+    "<Cmd>call VSCodeCall('workbench.action.closeEditorsInOtherGroups')<CR>",
+    { desc = "Close Other Editor Groups" }
+  )
   map("n", "<leader>w", "<Cmd>call VSCodeCall('workbench.action.files.save')<CR>", { desc = "Save File" })
   map("n", "<leader>q", "<Cmd>call VSCodeCall('workbench.action.closeActiveEditor')<CR>", { desc = "Close Window" })
   map("n", "<leader>ee", "<Cmd>call VSCodeCall('workbench.view.explorer')<CR>", { desc = "Open Explorer" })
+  map(
+    "n",
+    "<leader>er",
+    "<Cmd>call VSCodeCall('workbench.files.action.refreshFilesExplorer')<CR>",
+    { desc = "Refresh Explorer" }
+  )
   map(
     "n",
     "<leader>eo",
@@ -47,6 +59,7 @@ if vim.g.vscode then
   map("n", "<S-l>", "<Cmd>call VSCodeCall('workbench.action.nextEditor')<CR>", { desc = "Go to Next Editor" })
   map("n", "zc", "<Cmd>call VSCodeCall('editor.fold')<CR>", { desc = "Fold" })
   map("n", "zo", "<Cmd>call VSCodeCall('editor.unfold')<CR>", { desc = "Unfold" })
+  map("n", "gr", "<Cmd>call VSCodeCall('editor.action.goToReferences')<CR>", { desc = "Go To Reference" })
 else
   ----------------------------------------------------------------------------------------------------
   -----------------------------==========================================-----------------------------

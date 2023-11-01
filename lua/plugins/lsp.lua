@@ -2,20 +2,9 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      autoformat = false,
       servers = {
         pyright = {},
         ruff_lsp = {},
-      },
-      setup = {
-        ruff_lsp = function()
-          require("lazyvim.util").on_attach(function(client, _)
-            if client.name == "ruff_lsp" then
-              -- Disable hover in favor of Pyright
-              client.server_capabilities.hoverProvider = false
-            end
-          end)
-        end,
       },
     },
   },
@@ -59,7 +48,7 @@ return {
         "yaml",
         "ninja",
         "rst",
-        "toml"
+        "toml",
       },
       incremental_selection = {
         enable = true,
@@ -73,25 +62,24 @@ return {
     },
   },
 
-  --null-ls
+  --conform.nvim
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = { "mason.nvim" },
-    opts = function()
-      local nls = require("null-ls")
-      return {
-        root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
-        sources = {
-          nls.builtins.formatting.fish_indent,
-          nls.builtins.diagnostics.fish,
-          nls.builtins.formatting.stylua,
-          nls.builtins.formatting.shfmt,
-          nls.builtins.formatting.black,
-          nls.builtins.completion.spell,
-          -- nls.builtins.diagnostics.flake8,
-        },
-      }
-    end,
+    "stevearc/conform.nvim",
+    opts = {
+      -- LazyVim will use these options when formatting with the conform.nvim formatter
+      format = {
+        timeout_ms = 3000,
+        async = false, -- not recommended to change
+        quiet = false, -- not recommended to change
+      },
+      ---@type table<string, conform.FormatterUnit[]>
+      formatters_by_ft = {
+        lua = { "stylua" },
+        fish = { "fish_indent" },
+        sh = { "shfmt" },
+        python = { "isort", "black" },
+        markdown = { "prettier" },
+      },
+    },
   },
 }
