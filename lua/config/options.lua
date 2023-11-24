@@ -6,3 +6,5 @@ vim.opt.swapfile = false
 vim.opt.undofile = false
 vim.opt.writebackup = false
 vim.opt.shell = "powershell"
+vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command"
+vim.opt.shellxquote = ""
