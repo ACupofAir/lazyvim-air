@@ -8,3 +8,4 @@ vim.opt.writebackup = false
 vim.opt.shell = "powershell"
 vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command"
 vim.opt.shellxquote = ""
+vim.go.background = "light"
