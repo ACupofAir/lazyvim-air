@@ -1,20 +1,23 @@
 # 💤 LazyVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+## Plugins
 
-## Config
+1. install markdown-preview
 
-### colorschema: light or dark
+```bash
+cd ~\AppData\Local\nvim-data\lazy\markdown-preview.nvim
+npm install
+```
 
-- `lua/config/options.lua`: `vim.go.background = "light"`
+## Options
 
-### LSP Settings:
+1. colors: light or dark
 
-- Format
+    - `lua/config/options.lua`: `vim.go.background = "light"`
 
-  1. install format in `:Mason`
-  2. config in `lua/plugins/lsp.lua`: `"stevearc/conform.nvim"`
+2. auto format when save:
 
-- Treesitter
-  1. config in `lua/plugins/lsp.lua`: `"nvim-treesitter/nvim-treesitter"`
+    ```bash
+    vim.g.autoformat = true
+
+    ```
