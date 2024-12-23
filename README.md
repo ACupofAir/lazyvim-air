@@ -9,12 +9,6 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 - `lua/config/options.lua`: `vim.go.background = "light"`
 
-### LSP Settings:
-
-- Format
-
-  1. install format in `:Mason`
-  2. config in `lua/plugins/lsp.lua`: `"stevearc/conform.nvim"`
-
-- Treesitter
-  1. config in `lua/plugins/lsp.lua`: `"nvim-treesitter/nvim-treesitter"`
+### Dependency:
+- lazyvim
+- fzf
