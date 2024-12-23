@@ -9,6 +9,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 - `lua/config/options.lua`: `vim.go.background = "light"`
 
-### Dependency:
+### Dependency
+
 - lazyvim
 - fzf

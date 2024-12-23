@@ -68,4 +68,5 @@ else
   ----------------------------------------------------------------------------------------------------
   -- make [<leader> q] to quit windows
   map("n", "<leader>fd", "<cmd>cd %:p:h<cr>", { desc = "Go to the current file directory" })
+  map("n", "<leader>rm", "<cmd>RenderMarkdown toggle<cr>", { desc = "Toggle render markdown" })
 end

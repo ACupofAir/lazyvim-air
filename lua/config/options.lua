@@ -8,3 +8,4 @@ vim.opt.writebackup = false
 vim.wo.relativenumber = false
 vim.g.autoformat = false
 vim.o.jumpoptions = "stack"
+vim.o.conceallevel = 0
