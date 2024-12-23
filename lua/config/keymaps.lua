@@ -7,12 +7,7 @@
 -----------------------------==========================================-----------------------------
 ----------------------------------------------------------------------------------------------------
 -- diable termianl <c-h>
-vim.keymap.del("t", "<C-h>")
--- make [<leader> w] to save file
-vim.keymap.del("n", "<leader>ww")
-vim.keymap.del("n", "<leader>wd")
-vim.keymap.del("n", "<leader>w|")
-vim.keymap.del("n", "<leader>w-")
+-- vim.keymap.del("t", "<C-h>")
 
 ----------------------------------------------------------------------------------------------------
 -----------------------------==========================================-----------------------------
@@ -72,11 +67,5 @@ else
   -----------------------------==========================================-----------------------------
   ----------------------------------------------------------------------------------------------------
   -- make [<leader> q] to quit windows
-  vim.keymap.del("n", "<leader>qq")
-  vim.keymap.del("n", "<leader>ql")
-  vim.keymap.del("n", "<leader>qd")
-  vim.keymap.del("n", "<leader>qs")
-  map("n", "<leader>q", "<Cmd>:q<CR>", { desc = "Quit Winodw" })
-  map("n", "<leader>w", "<Cmd>:w<CR>", { desc = "Save File" })
   map("n", "<leader>fd", "<cmd>cd %:p:h<cr>", { desc = "Go to the current file directory" })
 end
