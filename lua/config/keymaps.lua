@@ -19,6 +19,7 @@ local map = vim.api.nvim_set_keymap
 map("n", "<leader>rn", "*``cgn", { desc = "Rename same words" })
 map("n", "<leader>rn", "#``cgN", { desc = "Rename same words" })
 map("n", "<leader>fp", "<Cmd>:echo expand('%p')<CR>", { desc = "Print current file path" })
+map("n", "<leader>p", "<Cmd>:Pastify<CR>", { desc = "Paste image" })
 ----------------------------------------------------------------------------------------------------
 -----------------------------==========================================-----------------------------
 -----------------------------=            VSCODE KEYMAPS              =-----------------------------
@@ -31,7 +32,6 @@ if vim.g.vscode then
     "<Cmd>call VSCodeCall('workbench.action.closeEditorsInOtherGroups')<CR>",
     { desc = "Close Other Editor Groups" }
   )
-  map("n", "<leader>w", "<Cmd>call VSCodeCall('workbench.action.files.save')<CR>", { desc = "Save File" })
   map("n", "<leader>q", "<Cmd>call VSCodeCall('workbench.action.closeActiveEditor')<CR>", { desc = "Close Window" })
   map("n", "<leader>ee", "<Cmd>call VSCodeCall('workbench.view.explorer')<CR>", { desc = "Open Explorer" })
   map(
@@ -66,7 +66,5 @@ else
   -----------------------------=            NEOVIM KEYMAPS              =-----------------------------
   -----------------------------==========================================-----------------------------
   ----------------------------------------------------------------------------------------------------
-  -- make [<leader> q] to quit windows
   map("n", "<leader>fd", "<cmd>cd %:p:h<cr>", { desc = "Go to the current file directory" })
-  map("n", "<leader>rm", "<cmd>RenderMarkdown toggle<cr>", { desc = "Toggle render markdown" })
 end

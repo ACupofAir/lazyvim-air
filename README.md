@@ -13,3 +13,13 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 - lazyvim
 - fzf
+- Pastify.nvim:
+
+  ```bash
+  pip3 install neovim
+  pip3 install pillow
+  ```
+
+### self keyboard mapping
+
+<!--TODO:-->
