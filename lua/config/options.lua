@@ -9,3 +9,4 @@ vim.wo.relativenumber = false
 vim.g.autoformat = false
 vim.o.jumpoptions = "stack"
 vim.o.conceallevel = 0
+vim.diagnostic.enable(false)
