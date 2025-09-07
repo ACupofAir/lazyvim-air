@@ -9,7 +9,7 @@ return {
         apikey = "YOUR API KEY (https://api.imgbb.com/)", -- Needed if you want to save online.
         save = 'local',
         local_path = function()
-          return vim.fn.expand("%:p:h") .. "/assets/"
+          return vim.fn.expand("%:p:h") .. "/res/"
         end,
         filename = function()
           return vim.fn.expand("%:t:r") .. "_" .. os.date("%Y-%m-%d_%H-%M-%S")
