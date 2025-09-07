@@ -33,12 +33,6 @@ nvim
 
 - lazygit
 - fzf
-- Pastify.nvim:
-
-```bash
-pip3 install neovim
-pip3 install pillow
-```
 
 ## Config
 
