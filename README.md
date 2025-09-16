@@ -33,6 +33,7 @@ nvim
 
 - lazygit
 - fzf
+- [im-select](https://github.com/daipeihust/im-select) for win and [macism](https://github.com/laishulu/macism) for macos
 
 ## Config
 
