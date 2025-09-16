@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  vscode=true,
   keys = {
     { "<c-k>", desc = "Increment Selection" },
     { "<bs>", desc = "Decrement Selection", mode = "x" },
