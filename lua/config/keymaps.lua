@@ -60,6 +60,7 @@ if vim.g.vscode then
   map("n", "zc", "<Cmd>call VSCodeCall('editor.fold')<CR>", { desc = "Fold" })
   map("n", "zo", "<Cmd>call VSCodeCall('editor.unfold')<CR>", { desc = "Unfold" })
   map("n", "gr", "<Cmd>call VSCodeCall('editor.action.goToReferences')<CR>", { desc = "Go To Reference" })
+  map("n", "<leader>st", "<Cmd>call VSCodeCall('workbench.action.showAllSymbols')<CR>", { desc = "Search tags" })
 else
   ----------------------------------------------------------------------------------------------------
   -----------------------------==========================================-----------------------------
